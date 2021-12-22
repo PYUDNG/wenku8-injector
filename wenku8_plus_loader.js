@@ -30,18 +30,8 @@
     }
 
     // Hook <a>
-    for (const a of document.querySelectorAll('a')) {
-      a.addEventListener('click', onclick);
-    }
-
-    function onclick(e) {
-      const a = e.currentTarget;
-      const href = a.href;;
-      if (!a.href.match(/^https?:\/\//)) {return;}
-
-      destroyEvent(e);
-      window.open(href);
-    }
+    hooklinks();
+    setInterval(hooklinks, 1000);
 
     // Load wenku8+
     loadJSPlus(main_url, function(success) {
@@ -51,6 +41,23 @@
         DoLog('wenku8+ main load failed');
       }
     }, oDom);
+
+    function hooklinks() {
+      // Hook <a>
+      for (const a of document.querySelectorAll('a')) {
+        !a.wenku8_loader_hooked && a.addEventListener('click', onclick);
+        a.wenku8_loader_hooked = true;
+      }
+
+      function onclick(e) {
+        const a = e.currentTarget;
+        const href = a.href;;
+        if (!a.href.match(/^https?:\/\//)) {return;}
+
+        destroyEvent(e);
+        window.open(href);
+      }
+    }
   }
 
 
