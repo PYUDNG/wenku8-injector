@@ -8,7 +8,7 @@
   DoLog(LogLovel.Success, 'wenku8+ loader loaded successfully on this page');
 
   const main_url   = 'https://greasyfork.org/scripts/416310/code/script.user.js';
-  const loader_url = 'https://greasyfork.org/scripts/416310/code/script.user.js';
+  const loader_url = 'https://cdn.jsdelivr.net/gh/PYUDNG/wenku8-injector@main/wenku8_plus_loader.js';
   
   dealDocument();
 
