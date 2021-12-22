@@ -5,6 +5,7 @@
 	const a = document.querySelector('a[href="#wenkuplus"]');
 	a.setAttribute('tiptitle', '点击这里即可运行脚本，关闭浏览器后脚本就会自动消失');
 	a.addEventListener('click', function() {
+		destroyEvent();
 		!window.wenku8plus_loader_loaded && confirm('是否运行 [轻小说文库8+]？') && loadJSPlus(loader_url, function(success) {
             if (success) {
                 DoLog(['wenku8+ loader loaded for', oDom]);
