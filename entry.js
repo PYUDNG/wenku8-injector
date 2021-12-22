@@ -3,6 +3,7 @@
 	const loader_url = 'https://cdn.jsdelivr.net/gh/PYUDNG/wenku8-injector@main/wenku8_plus_loader.js'; // 'https://tinyurl.com/y63x2xb4'
 
 	const a = document.querySelector('a[href="#wenkuplus"]');
+	a.tiptitle = '点击这里即可运行脚本，关闭浏览器后脚本就会自动消失';
 	a.addEventListener('click', function() {
 		!window.wenku8plus_loader_loaded && confirm('是否运行 [轻小说文库8+]？') && loadJSPlus(loader_url, function(success) {
             if (success) {
