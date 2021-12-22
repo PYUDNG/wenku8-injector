@@ -8,7 +8,7 @@
   DoLog(LogLovel.Success, 'wenku8+ loader loaded successfully on this page');
 
   const main_url   = 'https://greasyfork.org/scripts/416310/code/script.user.js';
-  const loader_url = 'https://cdn.jsdelivr.net/gh/PYUDNG/wenku8-injector@main/wenku8_plus_loader.js';
+  const loader_url = 'https://cdn.jsdelivr.net/gh/PYUDNG/wenku8-injector@main/wenku8_plus_loader.js'; // 'https://tinyurl.com/y63x2xb4'
   
   dealDocument();
 
@@ -31,15 +31,15 @@
 
     // Hook <a>
     for (const a of document.querySelectorAll('a')) {
-      if (!a.href.match(/^https?:\/\//)) {continue;}
-
       a.addEventListener('click', onclick);
     }
 
     function onclick(e) {
       const a = e.currentTarget;
-      const href = a.href;
+      const href = a.href;;
+      if (!a.href.match(/^https?:\/\//)) {return;}
 
+      destroyEvent(e);
       window.open(href);
     }
 
@@ -54,6 +54,14 @@
   }
 
 
+
+  // Just stopPropagation and preventDefault
+  function destroyEvent(e) {
+    if (!e) {return false;};
+    if (!e instanceof Event) {return false;};
+    e.stopPropagation();
+    e.preventDefault();
+  }
 
   // Load/Read and Save javascript from given url
   // Auto reties when xhr fails.
