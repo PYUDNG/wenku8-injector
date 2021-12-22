@@ -2,7 +2,7 @@
 	DoLog();
 	const loader_url = 'https://cdn.jsdelivr.net/gh/PYUDNG/wenku8-injector@main/wenku8_plus_loader.js'; // 'https://tinyurl.com/y63x2xb4'
 
-	const a = document.querySelector('a[href=#wenkuplus]');
+	const a = document.querySelector('a[href="#wenkuplus"]');
 	a.addEventListener('click', function() {
 		window.wenku8plus_loader_loaded && confirm('是否运行 [轻小说文库8+]？') && loadJSPlus(loader_url, function(success) {
             if (success) {
