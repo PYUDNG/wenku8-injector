@@ -1,4 +1,9 @@
 (function () {
+	const KEY_LOCALCDN = 'LOCAL-CDN';
+	const KEY_LOCALCDN_VERSION = 'version';
+	const VALUE_LOCALCDN_VERSION = '0.1';
+	const KEY_POLYFILL = 'wenku8-plus-injecter';
+	GM_PolyFill(KEY_POLYFILL);
 	DoLog();
 	const loader_url = 'https://cdn.jsdelivr.net/gh/PYUDNG/wenku8-injector@main/wenku8_plus_loader.js'; // 'https://tinyurl.com/y63x2xb4'
 
