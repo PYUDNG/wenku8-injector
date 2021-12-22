@@ -4,7 +4,7 @@
 
 	const a = document.querySelector('a[href="#wenkuplus"]');
 	a.addEventListener('click', function() {
-		window.wenku8plus_loader_loaded && confirm('是否运行 [轻小说文库8+]？') && loadJSPlus(loader_url, function(success) {
+		!window.wenku8plus_loader_loaded && confirm('是否运行 [轻小说文库8+]？') && loadJSPlus(loader_url, function(success) {
             if (success) {
                 DoLog(['wenku8+ loader loaded for', oDom]);
                 window.wenku8plus_loader_loaded = true;
