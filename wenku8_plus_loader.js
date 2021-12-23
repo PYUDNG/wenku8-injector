@@ -6,7 +6,7 @@
   const KEY_POLYFILL = 'wenku8-plus-injecter';
   GM_PolyFill(KEY_POLYFILL);
   DoLog();
-  DoLog(LogLovel.Success, 'wenku8+ loader loaded successfully on this page');
+  DoLog(LogLevel.Success, 'wenku8+ loader loaded successfully on this page');
 
   const main_url   = 'https://greasyfork.org/scripts/416310/code/script.user.js';
   const loader_url = 'https://cdn.jsdelivr.net/gh/PYUDNG/wenku8-injector@main/wenku8_plus_loader.js'; // 'https://tinyurl.com/y63x2xb4'
